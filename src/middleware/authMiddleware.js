@@ -4,7 +4,7 @@ import { prisma } from '../config/db.js'
 
 // Read the tocken from the request
 // Check if toeken is valid
-const authMiddleware = async (req, res, next) => {
+export const authMiddleware = async (req, res, next) => {
     let token;
     if(req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
         token = req.headers.authorization.split(" ")[1] // ["Bearer", "token"]
